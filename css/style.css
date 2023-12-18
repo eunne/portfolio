@@ -16,26 +16,33 @@ body {
 }
 
 /* tag 초기화 */
+/* module이용할 수도 있지만 순수 css로 하는 방법도 알아야함 */
+
+/* 모든 태그의 마진 없애기 */
 h1,h2,h3,p,ul {
   margin: 0;
 }
 
+/* ul태그에서 목록에 쩜 나오는거 없애고 앞에 빈공간 없애기 */
 ul {
   list-style: none;
   padding: 0;
 }
 
+/* a태그 밑줄, 그리고 색상변경 */
 a {
   text-decoration: none;
   color: var(--color-black)
 }
 
+/* 버튼 배경색, 아웃라인제거 */
 button {
   background-color: transparent;
   outline: 0;
   border: 0;
 }
 
+/* 버튼을 눌렀을 때, 아웃라인 생기도록 설정 */
 button:focus {
   outline: 1px solid var(--color-blue)
 }
