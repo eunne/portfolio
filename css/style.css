@@ -1,5 +1,13 @@
 /* Global */
 :root {
+  /* App Colors */
+  /* color를 바꾸고 싶을 때, 변수명을 다 바꿔야하는 불상사를 막기 위해 한단계 더 추상적인 컬러 세팅 */
+  --color-primary: var(--color-black);
+  --color-primary-variant: var(--color-gray);
+  --color-accent:var(--color-blue);
+  --color-accent-variant: var(--color-orange);
+  --color-text: var(--color-white);
+
   --color-white: #ffffff;
   --color-black: #050a13;
   --color-blue: #03e8f9;
@@ -32,7 +40,7 @@ ul {
 /* a태그 밑줄, 그리고 색상변경 */
 a {
   text-decoration: none;
-  color: var(--color-black)
+  color: var(--color-primary);
 }
 
 /* 버튼 배경색, 아웃라인제거 */
@@ -44,5 +52,5 @@ button {
 
 /* 버튼을 눌렀을 때, 아웃라인 생기도록 설정 */
 button:focus {
-  outline: 1px solid var(--color-blue)
+  outline: 1px solid var(--color-accent);
 }
