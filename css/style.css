@@ -21,6 +21,7 @@
 
 body {
   font-family: 'Ubuntu', sans-serif;  
+  margin: 0;
 }
 
 /* tag 초기화 */
@@ -53,4 +54,57 @@ button {
 /* 버튼을 눌렀을 때, 아웃라인 생기도록 설정 */
 button:focus {
   outline: 1px solid var(--color-accent);
+}
+
+/* header */
+.header {
+  /* fixed: out fo flow */
+  position: fixed;
+  top: 0;
+  /* 헤더 넓이를 페이지 넓이와 동일하게 맞춘다 */
+  width: 100%;
+  padding: 1rem;
+  /* flex로 만들어서 아이템들이 나란히 위치하게 만든다. */
+  display: flex;
+  /* 각 아이템들 사이에 공간을 두고 간격을 넓힌다. */
+  justify-content: space-between;
+  /* 세로로 정렬을 맞춘다. */
+  align-items: center;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* change img size */
+/* class 안 만들고header__logo img 로 작성할 수 있지만 성능에 안 좋음. 모든 img태그 검색 후 header__logo 안에 있는 img를 보여주기 때문 */
+.header__logo__img {
+  width: 36px;
+  height: 36px;
+}
+
+.header__logo__title {
+  /* rem = relative unit, browser default size * rem */
+  font-size: 1.8rem;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header__menu__item {
+  padding: 8px 16px;
+}
+
+.header__menu__item:hover {
+  border-bottom: 1px solid var(--color-accent);
+}
+
+.header__menu__item.active {
+  border: 1px solid var(--color-accent);
+  border-radius: 4px;
 }
