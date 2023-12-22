@@ -41,7 +41,7 @@ ul {
 /* a태그 밑줄, 그리고 색상변경 */
 a {
   text-decoration: none;
-  color: var(--color-primary);
+  color: var(--color-text);
 }
 
 /* 버튼 배경색, 아웃라인제거 */
@@ -107,4 +107,27 @@ button:focus {
 .header__menu__item.active {
   border: 1px solid var(--color-accent);
   border-radius: 4px;
+}
+
+
+/* home */
+/* 배경색 바꾸고 패딩주기 */
+#home {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 5rem 1rem;
+  padding-top: 7rem;
+  text-align: center;
+}
+
+.home__avatar {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 2px solid var(--color-accent);
+}
+
+.home__title {
+
 }
