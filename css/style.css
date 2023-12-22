@@ -144,3 +144,36 @@ button:focus {
   border-radius: 100%;
   border: 2px solid var(--color-accent);
 }
+
+.home__title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.home__title--strong {
+  color: var(--color-accent);
+}
+
+.home__description {
+  font-size: 1.3rem;
+}
+
+.home__contact {
+  /* contact가 inline이어서 위아래로 margin이 안 들어감, 그래서 inline block으로 바꿔줄거임 */
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-black);
+  margin: 2rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+.home__contact:hover{
+  background-color: transparent;
+  color: var(--color-text);
+
+  /* 전체적으로 'box-sizing: border-box;'을 설정했기 때문에 
+  border-box를 설정하면 padding, border를 포함해서 박스사이징이 되서 hover되면 box가 border만큼 커져서 컨텐츠가 전체적으로 밀린다. 그러므로 box바깥에 테두리를 그리는 outline을 설정하면 된다. */
+  outline: 2px solid var(--color-accent);
+
+}
