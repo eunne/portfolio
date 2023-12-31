@@ -289,3 +289,28 @@ button:focus {
   /* color조합을 여러개 안 만들어도 밝기 조정으로 다양하게 명도를 조정할 수 있다. */
   filter: brightness(150%)
 }
+
+/* progress bar */
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.bar__metadata {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bar__bg {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-primary-variant);
+}
+
+.bar__value {
+  height: 3px;
+  background-color: var(--color-accent);
+}
