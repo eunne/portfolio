@@ -48,6 +48,10 @@ a {
   color: var(--color-text);
 }
 
+p {
+  display: block;
+}
+
 /* 버튼 배경색, 아웃라인제거 */
 button {
   background-color: transparent;
@@ -67,6 +71,7 @@ button:focus {
   text-align: center;
 }
 
+/* 컨테이너 최대 사이즈를 지정 */
 .max-container {
   max-width: var(--size-max-width);
   margin: auto;
@@ -240,4 +245,47 @@ button:focus {
 .job__period {
   color: var(--color-primary);
   font-size: 0.8rem;
+}
+
+
+/* Skills */
+#skills {
+  background-color: var(--color-primary-variant);
+  color: var(--color-text);
+  box-shadow: 0 3px 10px rgb(0,0,0,0.2);
+}
+
+.skills {
+  /* 2 * 2 grid형태로 만들기 */
+  display: grid;
+  /* 각 열의 넓이를 6:4의 비율로 설정 */
+  grid-template-columns: 6fr 4fr;
+  margin: 2rem 3rem;
+  border-radius: 8px;
+  /* 각 id에서 grid background color를 지정해놔서 radius를 줘도 밖으로 빠져나옴. 그래서 밖으로 나온 자식요소를 숨겨줘!라고 말해주면 됨 */
+  overflow: hidden;
+}
+
+.skills__title {
+  color: var(--color-accent);
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.skills__coding {
+  /* skills 섹션은 2행을 차지하도록 설정 */
+  grid-row: span 2;
+  padding: 1rem;
+  background-color: var(--color-primary);
+}
+
+.skills__tools {
+  padding: 1rem;
+}
+
+.skills__etc {
+  padding: 1rem;
+  background-color: var(--color-primary);
+  /* color조합을 여러개 안 만들어도 밝기 조정으로 다양하게 명도를 조정할 수 있다. */
+  filter: brightness(150%)
 }

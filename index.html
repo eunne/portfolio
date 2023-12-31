@@ -82,7 +82,7 @@
         <li class="major">
           <i class="fa-solid fa-server major__icon"></i>
           <p class="major__title">Back-end</p>
-          <p>Java, Javascript</p>
+          <p>JJava, JavaScript, </p>
         </li>
       </ul>
       <ul class="jobs">
@@ -104,56 +104,62 @@
       </ul>
     </section>
     <!-- Skills -->
+    <!-- .skills에 max-container를 걸어두면 배경색상에도 제약이 걸린다. 그래서 skills섹션 전체를 div라는 전체 요소로 한번 더 묶어주고 div에 max container 제약을 걸어주면 내부 요소들에만 제약이 걸리게 된다.-->
+    
     <section id="skills" class="section">
-      <h2 class="title">My Skills</h2>
-      <p class="description">Skills & Attribute</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt maiores iusto vitae debitis eum repellat at libero, neque eligendi nemo! Tempore maiores quasi vero voluptatibus, deserunt hic magni? Laborum, natus!</p>
-      <div>
-        <section>
-          <h3>Coding Skills</h3>
-          <ul>
-            <li>
-              <div><span>HTML</span><span>98%</span></div>
-              <div><div style="width:98%"></div></div>
-            </li>
-            <li>
-              <div><span>CSS</span><span>90%</span></div>
-              <div><div style="width:90%"></div></div>
-            </li>
-            <li>
-              <div><span>Javascript</span><span>90%</span></div>
-              <div><div style="width:90%"></div></div>
-            </li>
-            <li>
-              <div><span>Typescript</span><span>80%</span></div>
-              <div><div style="width:80%"></div></div>
-            </li>
-            <li>
-              <div><span>React</span><span>88%</span></div>
-              <div><div style="width:88%"></div></div>
-            </li>
-            <li>
-              <div><span>NodeJs</span><span>77%</span></div>
-              <div><div style="width:77%"></div></div>
-            </li>
-          </ul>
-        </section>
-      <section>
-        <h3>Tools</h3>
-        <ul>
-          <li>Visual Studio code</li>
-          <li>IntelliJ</li>
-          <li>Android Studio Code</li>
-          <li>iOS</li>
-          <li>Sketch app</li>
-        </ul>
-      </section>
-      <section>
-        <h3>Etc</h3>
-        <li>Git</li>
-        <li>Scrum master</li>
-        <li>Math</li>
-      </section>
+      <div class="max-container"> 
+        <h2 class="title">My Skills</h2>
+        <p class="description">Skills & Attribute</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt maiores iusto vitae debitis eum repellat at libero, neque eligendi nemo! Tempore maiores quasi vero voluptatibus, deserunt hic magni? Laborum, natus!</p>
+        <div class="skills">
+          <section class="skills__coding">
+            <h3 class="skills__title">Coding Skills</h3>
+            <ul>
+              <li>
+                <div><span>HTML</span><span>98%</span></div>
+                <div><div style="width:98%"></div></div>
+              </li>
+              <li>
+                <div><span>CSS</span><span>90%</span></div>
+                <div><div style="width:90%"></div></div>
+              </li>
+              <li>
+                <div><span>Javascript</span><span>90%</span></div>
+                <div><div style="width:90%"></div></div>
+              </li>
+              <li>
+                <div><span>Typescript</span><span>80%</span></div>
+                <div><div style="width:80%"></div></div>
+              </li>
+              <li>
+                <div><span>React</span><span>88%</span></div>
+                <div><div style="width:88%"></div></div>
+              </li>
+              <li>
+                <div><span>NodeJs</span><span>77%</span></div>
+                <div><div style="width:77%"></div></div>
+              </li>
+            </ul>
+          </section>
+          <section class="skills__tools">
+            <h3 class="skills__title">Tools</h3>
+            <ul>
+              <li>Visual Studio code</li>
+              <li>IntelliJ</li>
+              <li>Android Studio Code</li>
+              <li>iOS</li>
+              <li>Sketch app</li>
+            </ul>
+          </section>
+          <section class="skills__etc">
+            <h3 class="skills__title">Etc</h3>
+            <ul>
+              <li>Git</li>
+              <li>Scrum master</li>
+              <li>Math</li>
+            </ul>
+          </section>
+        </div>
       </div>
     </section>
     <!-- Work -->
