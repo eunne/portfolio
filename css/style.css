@@ -101,6 +101,8 @@ button:focus {
   justify-content: space-between;
   /* 세로로 정렬을 맞춘다. */
   align-items: center;
+  /* 헤더가 가장 상위에 있을 수 있도록 설정(다른 요소들이 앞으로 덮어쓰지 않도록.. 개체 가장 앞으로 가져오기라고 보면 됨 */
+  z-index: 1;
 }
 
 .header__logo {
@@ -313,4 +315,62 @@ button:focus {
 .bar__value {
   height: 3px;
   background-color: var(--color-accent);
+}
+
+/* Work */
+#work {
+  background-color: var(--color-primary);
+  color: var(--color-text)
+}
+
+.categories {
+  display:flex;
+  justify-content: center;
+  margin: 2.5rem;
+  gap: 1rem;
+}
+
+/* button */
+.category {
+  position: relative;
+  color: var(--color-text);
+  font-size: 1.1rem;
+  padding: 0.5rem 2.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-accent);
+  cursor: pointer; /*손가락모양커서*/
+  /* 버튼 내부 글자가 창이 작아졌을 때 줄바꿈되지 않도록 설정 */
+  white-space: nowrap;
+}
+
+.category--selected {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.category__count {
+  /* 평소에는 안 보여지다가, 카테고리가 선택되거나 마우스가 올라가면 보여준다.*/
+  opacity: 0;
+  /* 기존 flow 빠져 나옴. 부모 중 relative를 기준으로 위치 설정됨 */
+  position: absolute;
+  /* 탑에서 위로 올라가야되니까 (-) */
+  top: -20px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 100%;
+  background-color: var(--color-accent-variant);
+  color: var(--color-text);
+
+  /* 카운트 버튼 애니메이션 */
+  transition: all 200ms ease-in;
+}
+
+/* 선택되거나, 카테고리 위에 마우스가 올라갈 때 */
+.category--selected .category__count,
+.category:hover .category__count {
+  opacity: 1;
+  /* 위에서 내려오도록 설정 */
+  top: 0;
 }
