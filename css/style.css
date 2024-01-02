@@ -374,3 +374,58 @@ button:focus {
   /* 위에서 내려오도록 설정 */
   top: 0;
 }
+
+/* 그리드로 만들기,  4 *2 로 만들기 */
+.projects{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* 안에 이미지가 밖으로 나오지 않도록 하기 */
+.project {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project__img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 평소엔 안 보이다가 마우스가 올라올 때 메타데이터 보여주기 */
+.project__metadata {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  transition: all 200ms ease-in;
+  transform: translateY(-5px);
+}
+
+.project__metadata:hover {
+  opacity: 0.8;
+  transform: translateY(0px);
+}
+
+/* 안에 내용은 없지만 꾸미기 용으로 가상의 요소를 만들어 줄 수 있음 : css로만 */
+.project__title:after {
+  content:'';
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0.5rem 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--color-accent);
+}
