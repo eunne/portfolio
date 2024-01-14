@@ -22,3 +22,14 @@ document.addEventListener('scroll', () => {
     header.classList.remove('header--dark');
   }
 })
+
+
+// scrolling 될 때 점점 home section 이 투명해지도록 만들기
+// opacity가 1에서 0으로 수렴하도록 공식 만들기
+const home = document.querySelector('.home__container');
+homeHeight = home.getBoundingClientRect().height;
+homeHeight2 = home.offsetHeight;
+
+document.addEventListener('scroll', () => {
+  home.style.opacity = 1 - (scrollY / homeHeight);
+})
