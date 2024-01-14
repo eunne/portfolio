@@ -32,4 +32,30 @@ homeHeight2 = home.offsetHeight;
 
 document.addEventListener('scroll', () => {
   home.style.opacity = 1 - (scrollY / homeHeight);
+<<<<<<< HEAD
+=======
+})
+
+
+// page가 스크롤링 될수록 header에 progress 정도를 표시해주기
+const headerProgressbar = document.querySelector('.header__progressbar');
+
+document.addEventListener('scroll', () => {
+  headerProgressbar.style.width = `${scrollY / document.body.clientHeight}*100`
+  console.log(scrollY);
+  console.log(document.body.clientHeight);
+  console.log(headerProgressbar.style.width);
+});
+
+
+// home 절반정도 가려지면 arrow btn이 나타나도록 설정
+const arrowBtn = document.querySelector('.arrow-up');
+
+document.addEventListener('scroll', () => {
+  if (window.scrollY > homeHeight / 2 ) {
+    arrowBtn.style.opacity = 1;
+  } else {
+    arrowBtn.style.opacity = 0;
+  }
+>>>>>>> 42c4bd0 ([JS] hide and show arrow-upBtn)
 })
