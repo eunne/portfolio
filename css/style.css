@@ -59,9 +59,8 @@ button {
   border: 0;
 }
 
-/* 버튼을 눌렀을 때, 아웃라인 생기도록 설정 */
 button:focus {
-  outline: 1px solid var(--color-accent);
+  outline: 1px solid transparent;
 }
 
 /* common */
@@ -132,12 +131,26 @@ button:focus {
   font-size: 1.8rem;
 }
 
+/* media query 안에서 실행되는 것도 밖에서 스타일링을 다 해주는구나 */
+.header__toggle {
+  display: none;
+  position: absolute;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  top: 1.3rem;
+  right: 1rem;
+}
+
 .header__menu {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
+/* media query밖에서 처리 */
+.header__menu.open {
+  display: flex;
+}
 .header__menu__item {
   padding: 8px 16px;
 }
@@ -534,17 +547,25 @@ button:focus {
   .header {
     flex-direction: column;
     align-items: start;
+    background-color: var(--color-primary);
   }
-
+  .header__toggle {
+    display: block;
+  }
+  
   .header__nav {
     width: 100%;
   }
 
   .header__menu {
+    display: none;
     flex-direction: column;
     text-align: center;
     padding: 1rem 4rem;
-    gap: 1rem
+    gap: 1rem;
+    /* toggle을 누르면 나오도록 기본값을 none으로 설정 */
+  }
+
   }
 
   #home {
