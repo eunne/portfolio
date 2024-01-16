@@ -54,3 +54,12 @@ const navToggle = document.querySelector('.header__toggle');
 navToggle.addEventListener('click', () => {
   navMenu.classList.toggle('open');
 })
+
+//navbar menu 클릭 시 자동으로 닫기
+navMenu.addEventListener('click', () => {
+  // navMenu 아무데나 눌러도 닫히는 것을 방지하기 위하여
+  const menuItem = event.target.className == 'header__menu__item';
+  if (menuItem) {
+    navMenu.classList.toggle('open');
+  }
+})
