@@ -31,7 +31,7 @@ homeHeight = home.offsetHeight;
 
 document.addEventListener('scroll', () => {
   home.style.opacity = 1 - (scrollY / homeHeight);
-})
+});
 
 
 // home 절반정도 가려지면 arrow btn이 나타나도록 설정

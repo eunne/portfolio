@@ -146,6 +146,16 @@ button:focus {
   right: 1rem;
 }
 
+/* media query 안에서 실행되는 것도 밖에서 스타일링을 다 해주는구나 */
+.header__toggle {
+  display: none;
+  position: absolute;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  top: 1.3rem;
+  right: 1rem;
+}
+
 .header__menu {
   display: flex;
   justify-content: space-around;
