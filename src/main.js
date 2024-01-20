@@ -1,7 +1,6 @@
 // window : 글로벌 객체, 브라우저를 의미함
 // window.document.querySelector();
 
-
 // Header에 페이지 아래로 스크롤 시 다크 스타일링 적용
 // [how to] clinetY 좌표 값 > header height -> header 색상을 black으로 바꾼다.black으로
 
@@ -27,8 +26,8 @@ document.addEventListener('scroll', () => {
 // scrolling 될 때 점점 home section 이 투명해지도록 만들기
 // opacity가 1에서 0으로 수렴하도록 공식 만들기
 const home = document.querySelector('.home__container');
-homeHeight = home.getBoundingClientRect().height;
-homeHeight2 = home.offsetHeight;
+//homeHeight = home.getBoundingClientRect().height;
+homeHeight = home.offsetHeight;
 
 document.addEventListener('scroll', () => {
   home.style.opacity = 1 - (scrollY / homeHeight);

@@ -413,6 +413,12 @@ button:focus {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
+  transition: all 300ms ease-out;
+}
+
+.projects.anime-out {
+  opacity: 0;
+  transform: scale(0.96) translateY(20px);
 }
 
 /* 안에 이미지가 밖으로 나오지 않도록 하기 */
