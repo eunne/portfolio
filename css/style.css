@@ -42,6 +42,10 @@ ul {
   padding: 0;
 }
 
+li {
+  width: 100%;
+}
+
 /* a태그 밑줄, 그리고 색상변경 */
 a {
   text-decoration: none;
@@ -57,11 +61,11 @@ button {
   background-color: transparent;
   outline: 0;
   border: 0;
+  cursor: pointer;
 }
 
-/* 버튼을 눌렀을 때, 아웃라인 생기도록 설정 */
 button:focus {
-  outline: 1px solid var(--color-accent);
+  outline: 1px solid transparent;
 }
 
 /* common */
@@ -141,14 +145,41 @@ button:focus {
   font-size: 1.8rem;
 }
 
+/* media query 안에서 실행되는 것도 밖에서 스타일링을 다 해주는구나 */
+.header__toggle {
+  display: none;
+  position: absolute;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  top: 1.3rem;
+  right: 1rem;
+}
+
+/* media query 안에서 실행되는 것도 밖에서 스타일링을 다 해주는구나 */
+.header__toggle {
+  display: none;
+  position: absolute;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  top: 1.3rem;
+  right: 1rem;
+}
+
 .header__menu {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
+/* media query밖에서 처리 */
+.header__menu.open {
+  display: flex;
+}
 .header__menu__item {
+  display: block;
   padding: 8px 16px;
+  /* focus 될 때 outline 만큼 밀리는거 방지 */
+  border-bottom: 1px solid transparent;
 }
 
 .header__menu__item:hover {
@@ -401,6 +432,12 @@ button:focus {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
+  transition: all 300ms ease-out;
+}
+
+.projects.anime-out {
+  opacity: 0;
+  transform: scale(0.96) translateY(20px);
 }
 
 /* 안에 이미지가 밖으로 나오지 않도록 하기 */
@@ -529,7 +566,7 @@ button:focus {
 /* screen size가 바뀔 때, style재정의 */
 @media screen and (max-width: 768px) {
   .section {
-    padding: 3rem 2rem;
+    padding: 5rem 2rem;
   }
 
   .title {
@@ -543,17 +580,23 @@ button:focus {
   .header {
     flex-direction: column;
     align-items: start;
+    background-color: var(--color-primary);
   }
-
+  .header__toggle {
+    display: block;
+  }
+  
   .header__nav {
     width: 100%;
   }
 
   .header__menu {
+    display: none;
     flex-direction: column;
     text-align: center;
-    padding: 1rem 4rem;
-    gap: 1rem
+    margin: 1rem 4rem;
+    gap: 1rem;
+    /* toggle을 누르면 나오도록 기본값을 none으로 설정 */
   }
 
   #home {

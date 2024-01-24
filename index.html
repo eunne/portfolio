@@ -29,6 +29,8 @@
 
   <!-- Javascript -->
   <script src="src/main.js" defer></script>
+  <script type="module" src="src/projects.js" defer></script>
+  <script type="module" src="src/active_menu.js" defer></script>
 </head>
 <body>
   <!-- Header -->
@@ -41,20 +43,23 @@
     </div>
     <nav class="header__nav">
       <ul class="header__menu">
-        <li><a class="header__menu__item active href="#home">Home</a></li>
-        <li><a class="header__menu__item href="#about">About</a></li>
-        <li><a class="header__menu__item href="#skills">Skills</a></li>
-        <li><a class="header__menu__item href="#work">My works</a></li>
-        <li><a class="header__menu__item href="#testimonial">Testimonials</a></li>
-        <li><a class="header__menu__item href="#contact">Contact</a></li>
+        <li><a class="header__menu__item active" href="#home">Home</a></li>
+        <li><a class="header__menu__item" href="#skills" aria-level="#skills">Skills</a></li>
+        <li><a class="header__menu__item" href="#about">About</a></li>
+        <li><a class="header__menu__item" href="#work">My works</a></li>
+        <li><a class="header__menu__item" href="#testimonials">Testimonials</a></li>
+        <li><a class="header__menu__item" href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <button class="header__toggle" aria-label="navigation menu toggle">
+      <i class="fa-solid fa-burger"></i>
+    </button>
   </header>
   <!-- Main -->
   <main>
     <!-- [tip] tag*갯수 = 갯수만큼의 tag 생성됨-->
     <!-- Home -->
-    <section id="home">
+    <section id="home" id="observe">
       <div class="home__container">
         <img class="home__avatar" src="/img/Profile-removebg-preview.png" alt="Eunne's profile">
         <h2 class="home__title">
@@ -66,7 +71,7 @@
       </div> 
     </section>
     <!-- About -->
-    <section id="about" class="section max-container">
+    <section id="about" class="section max-container" id="observe">
       <h2 class="title">About me</h2>
       <p class="description">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum neque iusto quod hic laborum perspiciatis ducimus quasi reiciendis corporis, excepturi veniam necessitatibus similique unde, voluptas cumque molestiae, quos nisi ratione.가장 나를 어필할 수 있는, 왜 나를 뽑아야 하는 지, 나의 업적
@@ -183,13 +188,13 @@
         <h2 class="title">My works</h2>
         <p class="description">Projects</p>
         <ul class="categories">
-          <li><button class="category category--selected">All<span class="category__count">8</span></button></li>
-          <li><button class="category">Front-end<span class="category__count">8</span></button></li>
-          <li><button class="category">Back-end<span class="category__count">8</span></button></li>
-          <li><button class="category">Mobile<span class="category__count">8</span></button></li>
+          <li><button class="category category--selected" data-category="all">All<span class="category__count">8</span></button></li>
+          <li><button class="category frontend" data-category="front-end">Front-end<span class="category__count">3</span></button></li>
+          <li><button class="category backend" data-category="back-end">Back-end<span class="category__count">3</span></button></li>
+          <li><button class="category mobile" data-category="mobile">Mobile<span class="category__count">2</span></button></li>
         </ul>
         <ul class="projects">
-          <li class="project">
+          <li class="project" data-filter="back-end">
             <a href="#" target="_blank">
               <img src="img/projects/project1.webp" alt="project1" class="project__img">
               <div class="project__metadata">
@@ -198,7 +203,7 @@
               </div>
             </a>
           </li>
-          <li class="project">
+          <li class="project" data-filter="back-end">
             <a href="#" target="_blank">
               <img src="img/projects/project2.webp" alt="project2" class="project__img">
               <div class="project__metadata">
@@ -207,7 +212,7 @@
               </div>
             </a>
           </li>
-          <li class="project">
+          <li class="project" data-filter="back-end">
             <a href="#" target="_blank">
               <img src="img/projects/project3.webp" alt="project3" class="project__img">
               <div class="project__metadata">
@@ -216,7 +221,7 @@
               </div>
             </a>
           </li>
-          <li class="project">
+          <li class="project" data-filter="front-end">
             <a href="#" target="_blank">
               <img src="img/projects/project4.webp" alt="project4" class="project__img">
               <div class="project__metadata">
@@ -225,7 +230,7 @@
               </div>
             </a>
           </li>
-          <li class="project">
+          <li class="project" data-filter="front-end">
             <a href="#" target="_blank">
               <img src="img/projects/project5.webp" alt="project5" class="project__img">
               <div class="project__metadata">
@@ -234,7 +239,7 @@
               </div>
             </a>
           </li>
-          <li class="project">
+          <li class="project" data-filter="mobile">
             <a href="#" target="_blank">
               <img src="img/projects/project6.webp" alt="project6" class="project__img">
               <div class="project__metadata">
@@ -243,7 +248,7 @@
               </div>
             </a>
           </li>
-          <li class="project">
+          <li class="project" data-filter="front-end">
             <a href="#" target="_blank">
               <img src="img/projects/project7.webp" alt="project7" class="project__img">
               <div class="project__metadata">
@@ -252,7 +257,7 @@
               </div>
             </a>
           </li>
-          <li class="project">
+          <li class="project" data-filter="mobile">
             <a href="#" target="_blank">
               <img src="img/projects/project8.webp" alt="project8" class="project__img">
               <div class="project__metadata">
