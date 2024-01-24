@@ -8,11 +8,12 @@
 //- 마지막 contact섹션이 보이잔다면, 마지막 선택
 
 
-const sectionIds = ['#home', '#skills', '#about', '#work', '#testimonials', '#contact'];
+const sectionIds = ['#home', '#about', '#skills', '#work', '#testimonials', '#contact'];
 
 const sections = sectionIds.map((id) => document.querySelector(id));
 const navItems = sectionIds.map((id) => document.querySelector(`[href="${id}"]`));
 const visibleSections = sectionIds.map(() => false);
+let activeNavItem = navItems[0];
 
 const options = {
   rootMargin: '-20% 0px 0px 0px',
@@ -20,6 +21,7 @@ const options = {
 };
 const observer = new IntersectionObserver(observerCallback, options);
 sections.forEach(section => observer.observe(section));
+
 
 //무엇을
 function observerCallback(entries) {
@@ -36,10 +38,20 @@ function observerCallback(entries) {
   //navindex에서 선택하기
   const navIndex = selectLastOne? sectionIds.length - 1 : findFirstIntersecting(visibleSections);
   console.log('navindex', sectionIds[navIndex]);
+
+  selectNavItem(navIndex);  
 }
 
 // 첫번째로 true인 index를 반환
 function findFirstIntersecting(visibleSections) {
   const index = visibleSections.indexOf(true);
   return index >= 0 ? index : 0;
+}
+
+function selectNavItem(index) {
+  const navItem = navItems[index];
+  if(!navItem) return; //배열보다 많이 인덱스를 입력했을 경우 힘수 종료되도록 설정
+  activeNavItem.classList.remove('active');
+  activeNavItem = navItem;
+  activeNavItem.classList.add('active');
 }
