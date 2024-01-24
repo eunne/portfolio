@@ -167,8 +167,9 @@ button:focus {
 
 .header__menu {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  gap: 4px;
 }
 
 /* media query밖에서 처리 */
