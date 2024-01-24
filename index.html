@@ -30,6 +30,7 @@
   <!-- Javascript -->
   <script src="src/main.js" defer></script>
   <script type="module" src="src/projects.js" defer></script>
+  <script type="module" src="src/active_menu.js" defer></script>
 </head>
 <body>
   <!-- Header -->
@@ -42,7 +43,7 @@
     <nav class="header__nav">
       <ul class="header__menu">
         <li><a class="header__menu__item active" href="#home">Home</a></li>
-        <li><a class="header__menu__item" href="#skills">Skills</a></li>
+        <li><a class="header__menu__item" href="#skills" aria-level="#skills">Skills</a></li>
         <li><a class="header__menu__item" href="#about">About</a></li>
         <li><a class="header__menu__item" href="#work">My works</a></li>
         <li><a class="header__menu__item" href="#testimonials">Testimonials</a></li>
@@ -57,7 +58,7 @@
   <main>
     <!-- [tip] tag*갯수 = 갯수만큼의 tag 생성됨-->
     <!-- Home -->
-    <section id="home">
+    <section id="home" id="observe">
       <div class="home__container">
         <img class="home__avatar" src="/img/Profile-removebg-preview.png" alt="Eunne's profile">
         <h2 class="home__title">
@@ -69,7 +70,7 @@
       </div> 
     </section>
     <!-- About -->
-    <section id="about" class="section max-container">
+    <section id="about" class="section max-container" id="observe">
       <h2 class="title">About me</h2>
       <p class="description">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum neque iusto quod hic laborum perspiciatis ducimus quasi reiciendis corporis, excepturi veniam necessitatibus similique unde, voluptas cumque molestiae, quos nisi ratione.가장 나를 어필할 수 있는, 왜 나를 뽑아야 하는 지, 나의 업적
