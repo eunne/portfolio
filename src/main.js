@@ -31,6 +31,17 @@ homeHeight = home.offsetHeight;
 
 document.addEventListener('scroll', () => {
   home.style.opacity = 1 - (scrollY / homeHeight);
+})
+
+
+// page가 스크롤링 될수록 header에 progress 정도를 표시해주기
+const headerProgressbar = document.querySelector('.header__progressbar');
+
+document.addEventListener('scroll', () => {
+  headerProgressbar.style.width = `${scrollY / document.body.clientHeight}*100`
+  console.log(scrollY);
+  console.log(document.body.clientHeight);
+  console.log(headerProgressbar.style.width);
 });
 
 
